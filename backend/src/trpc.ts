@@ -1,6 +1,5 @@
 import { initTRPC } from '@trpc/server';
 
-
 const patterns = [
   {
     name: 'Абстрактная фабрика',
