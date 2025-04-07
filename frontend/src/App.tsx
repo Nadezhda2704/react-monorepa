@@ -1,4 +1,4 @@
-import { getAllPatternsRoute, getPatternRoute } from './lib/routes';
+import { getAllPatternsRoute, getPatternRoute, getPatternRouteParams } from './lib/routes';
 import { TrpcProvider } from './lib/trpc';
 import { AllPatternsPage } from './pages/AllPatternsPage';
 import { PatternPage } from './pages/PatternPage';
@@ -10,7 +10,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path={getAllPatternsRoute()} element={<AllPatternsPage />}></Route>
-          <Route path={getPatternRoute({ patternId: ':patternId' })} element={<PatternPage />}></Route>
+          <Route path={getPatternRoute(getPatternRouteParams)} element={<PatternPage />}></Route>
         </Routes>
       </BrowserRouter>
     </TrpcProvider>

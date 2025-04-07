@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
+import { GetPatternRouteParams } from '../../lib/routes'
 
 export const PatternPage = () => {
-    const { patternId } = useParams() as { patternId: string };
+    const { patternId } = useParams() as GetPatternRouteParams;
     return (
         <div>
             <h1>Паттерн {patternId}</h1>
