@@ -25,7 +25,6 @@ export const AllPatternsPage = () => {
               <span> ({pattern.englishName})</span>
             </h2>
           </Link>
-          <p>{pattern.description}</p>
         </div>
       ))}
     </div>

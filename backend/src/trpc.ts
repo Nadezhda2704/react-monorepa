@@ -1,4 +1,8 @@
 import { initTRPC } from '@trpc/server';
+import _ from 'lodash';
+import {z} from 'zod';
+
+const ideas = _.times(100, (i) => ({}))
 
 const patterns = [
   {
@@ -175,8 +179,18 @@ const trpc = initTRPC.create();
 
 export const trpcRouter = trpc.router({
   getPatterns: trpc.procedure.query(() => {
-    return { patterns };
+    return { patterns: patterns.map((pattern) => _.pick(pattern, ['name', 'englishName', 'id', 'type'])) };
   }),
+  getPattern: trpc.procedure
+    .input(
+      z.object({
+        patternId: z.string(),
+      })
+    )
+    .query(({ input }) => {
+      const pattern = patterns.find((pattern) => pattern.id === input.patternId);
+      return { pattern: pattern || null };
+    }),
 });
 
 export type TrpcRouter = typeof trpcRouter;

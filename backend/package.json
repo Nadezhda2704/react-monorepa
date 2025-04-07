@@ -11,12 +11,15 @@
   },
   "dependencies": {
     "@trpc/server": "^10.37.1",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
-    "cors": "^2.8.5"
+    "lodash": "^4.17.21",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.13",
     "@types/express": "^5.0.1",
-    "@types/node": "^22.13.16",
-    "@types/cors": "^2.8.13"
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.13.16"
   }
 }
