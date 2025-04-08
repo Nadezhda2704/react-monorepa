@@ -4,6 +4,7 @@ import { TrpcProvider } from './lib/trpc';
 import { AllPatternsPage } from './pages/AllPatternsPage';
 import { PatternPage } from './pages/PatternPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './styles/global.scss'
 
 const App = () => {
   return (
