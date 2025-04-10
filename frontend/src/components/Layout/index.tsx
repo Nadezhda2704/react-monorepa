@@ -9,7 +9,7 @@ export const Layout = () => {
         <Link className={css.logo} to={getAllPatternsRoute()}>
           Home
         </Link>
-        <nav>
+        <nav className={css.menu}>
           <Link className={css.link} to={getAllPatternsRoute()}>
             Паттерны
           </Link>

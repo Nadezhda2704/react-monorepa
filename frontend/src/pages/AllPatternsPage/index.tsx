@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { trpc } from '../../lib/trpc';
 import { getPatternRoute } from '../../lib/routes';
+import css from './index.module.scss';
 
 export const AllPatternsPage = () => {
   const { data, error, isLoading, isFetching, isError } = trpc.getPatterns.useQuery();
@@ -15,14 +16,12 @@ export const AllPatternsPage = () => {
 
   return (
     <div>
-      <h1>All Patterns</h1>
+      <h1 className={css.title}>All Patterns</h1>
       {data?.patterns.map((pattern) => (
-        <div key={pattern.id}>
+        <div className={css.item} key={pattern.id}>
           <Link to={getPatternRoute({ patternId: pattern.id })}>
-            <h2>
-              <span>{pattern.name}</span>
-              <span> ({pattern.englishName})</span>
-            </h2>
+            <span>{pattern.name}</span>
+            <span> ({pattern.englishName})</span>
           </Link>
         </div>
       ))}

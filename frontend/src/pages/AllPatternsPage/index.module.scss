@@ -1,0 +1,12 @@
+@import '../../styles/mixins';
+
+.title {
+  @include h2();
+  margin-bottom: 16px
+}
+
+.item {
+  @include link($primary, $dark-primary);
+  font-size: 18px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,16 @@
+@import '../../styles/mixins';
+
+.title {
+  @include h2();
+}
+
+.description {
+  color: $secondary-text;
+  margin-bottom: 32px
+}
+
+.item {
+  @include link( $dark-primary, $primary );
+  font-size: 18px;
+  margin-bottom: 8px;
+}

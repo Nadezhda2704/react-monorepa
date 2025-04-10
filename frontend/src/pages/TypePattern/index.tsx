@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { getPatternRoute, GetTypePatternRouteParams } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
 import type { TrpcRouter } from '@ideanick/backend/src/trpc';
+import css from './index.module.scss';
 
 export const PatternTypePage = () => {
   const { patternType } = useParams() as GetTypePatternRouteParams;
@@ -42,16 +43,15 @@ export const PatternTypePage = () => {
 
   return (
     <div>
-      <h1>
+      <h1 className={css.title}>
         <span>{patternTypeInfo?.name}</span>
         <span>({patternTypeInfo?.type})</span>
       </h1>
-      <p>{patternTypeInfo?.description}</p>
+      <p className={css.description}>{patternTypeInfo?.description}</p>
 
       <div>
-
         {patternsTypeList.map((pattern) => (
-          <div key={pattern.id}>
+          <div className={css.item} key={pattern.id}>
             <Link to={getPatternRoute({ patternId: pattern.id })}>
               <h2>
                 <span>{pattern.name}</span>
