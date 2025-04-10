@@ -7,6 +7,6 @@ export const getPatternRouteParams = getRouteParams({ patternId: true });
 export type GetPatternRouteParams = typeof getPatternRouteParams;
 export const getPatternRoute = ({ patternId }: GetPatternRouteParams) => `/pattern/${patternId}`;
 
-// export const getPatternRouteParams = { patternId: ':patternId' };
-// export type typeGetPatternRouteParams = { patternId: string };
-// export const getPatternRoute = ({ patternId }: { patternId: string }) => `/pattern/${patternId}`;
+export const getTypePatternRouteParams = getRouteParams({ patternType: true });
+export type GetTypePatternRouteParams = typeof getTypePatternRouteParams;
+export const getTypePatternRoute = ({ patternType }: GetTypePatternRouteParams) => `/type/${patternType}`;

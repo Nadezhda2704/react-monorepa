@@ -1,8 +1,8 @@
 import { initTRPC } from '@trpc/server';
 import _ from 'lodash';
-import {z} from 'zod';
+import { z } from 'zod';
 
-const ideas = _.times(100, (i) => ({}))
+const ideas = _.times(100, (i) => ({}));
 
 const patterns = [
   {
@@ -175,11 +175,32 @@ const patterns = [
   },
 ];
 
+const PatternsTypes = [
+  {
+    name: 'Порождающие',
+    description: 'Отвечают за удобное и безопасное создание новых объектов или даже целых семейств объектов.',
+    type: 'creational',
+  },
+  {
+    name: 'Структурные',
+    description: 'Отвечают за построение удобных в поддержке иерархий классов.',
+    type: 'structural',
+  },
+  {
+    name: 'Поведенческие',
+    description: 'Решают задачи эффективного и безопасного взаимодействия между объектами программы.',
+    type: 'behavioral',
+  },
+];
+
 const trpc = initTRPC.create();
 
 export const trpcRouter = trpc.router({
   getPatterns: trpc.procedure.query(() => {
     return { patterns: patterns.map((pattern) => _.pick(pattern, ['name', 'englishName', 'id', 'type'])) };
+  }),
+  getTypesPatterns: trpc.procedure.query(() => {
+    return { PatternsTypes };
   }),
   getPattern: trpc.procedure
     .input(

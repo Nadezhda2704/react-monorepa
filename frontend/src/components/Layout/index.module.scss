@@ -1,46 +1,46 @@
 @import '../../styles/mixins';
 
 .layout {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
 
-    @include Tablet {
-        flex-direction: column;
-    }
+  @include Tablet {
+    flex-direction: column;
+  }
 }
 
 .logo {
-    @include link($white, $light-primary);
+  @include link($white, $light-primary);
 
-    margin-bottom: 40px;
-    font-weight: 600;
+  margin-bottom: 40px;
+  font-weight: 600;
 
-    @include Tablet {
-        margin: 0 40px 0 0;
-    }
+  @include Tablet {
+    margin: 0 40px 0 0;
+  }
 }
 
 .link {
-    @include link($white, $light-primary);
-    font-weight: 600;
+  @include link($white, $light-primary);
+  font-weight: 600;
 }
 
 .container {
-    padding: 0 20px;
-    max-width: 1280px;
-    margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .navigation {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 20px 40px 30px;
-    min-width: 250px;
-    background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 40px 30px;
+  min-width: 250px;
+  background-color: $primary;
 
-    @include Tablet {
-        flex-direction: row;
-        padding: 20px;
-    }
+  @include Tablet {
+    flex-direction: row;
+    padding: 20px;
+  }
 }

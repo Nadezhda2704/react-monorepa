@@ -3,7 +3,6 @@ import { trpc } from '../../lib/trpc';
 import { getPatternRoute } from '../../lib/routes';
 
 export const AllPatternsPage = () => {
-  // console.log('trpc.getPatterns.useQuery()', trpc.getPatterns.useQuery());
   const { data, error, isLoading, isFetching, isError } = trpc.getPatterns.useQuery();
 
   if (isLoading || isFetching) {
