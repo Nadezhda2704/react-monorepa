@@ -22,7 +22,7 @@
 }
 
 .link {
-  @include Link($white, $light-primary);
+  @include link($white, $light-primary);
   font-weight: 600;
 }
 

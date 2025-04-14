@@ -1,5 +1,5 @@
-@import './_vars';
-@import '../../node_modules/include-media/dist/_include-media';
+@use './_vars';
+@use '../../node_modules/include-media/dist/_include-media';
 
 @mixin Desktop {
   @media screen and (min-width: $desktopPoint) {

@@ -1,7 +1,7 @@
 @import '../../styles/mixins';
 
 .title {
-  @include h2();
+  @include H2;
 }
 
 .description {
@@ -16,7 +16,7 @@
 }
 
 .item {
-  @include link( $dark-primary, $primary );
+  @include Link( $dark-primary, $primary );
   font-size: 18px;
   margin-bottom: 8px;
 }

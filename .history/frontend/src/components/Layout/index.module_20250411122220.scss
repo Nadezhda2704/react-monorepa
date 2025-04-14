@@ -11,7 +11,7 @@
 }
 
 .logo {
-  @include Link($white, $light-primary);
+  @include link($white, $light-primary);
 
   margin-bottom: 40px;
   font-weight: 600;
@@ -22,7 +22,7 @@
 }
 
 .link {
-  @include Link($white, $light-primary);
+  @include link($white, $light-primary);
   font-weight: 600;
 }
 

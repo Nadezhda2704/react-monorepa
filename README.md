@@ -29,6 +29,10 @@
 
 ```pnpm types``` — проверить типы
 
+```pnpm stylelint``` — проверить стиль SCSS файлов
+
+```pnpm stylelint --fix``` — пофиксить стиль SCSS файлов
+
 
 
 ## Для бэка (папка backend)

@@ -10,7 +10,7 @@
 }
 
 .item {
-  @include Link( $dark-primary, $primary );
+  @include link( $dark-primary, $primary );
   font-size: 18px;
   margin-bottom: 8px;
 }
