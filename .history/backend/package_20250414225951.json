@@ -3,20 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "ts-node-dev --watch ./.env --rs ./src/index.ts",
+    "dev": "ts-node-dev --rs ./src/index.ts",
     "build": "rimraf ./dist && tsc --build ./tsconfig.json",
     "start": "node ./dist/index.js",
-    "pmd": "prisma migrate dev",
-    "pgc": "prisma generate",
     "types": "tsc --noEmit --project ./tsconfig.json",
-    "prettify": "prettier --loglevel warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'",
-    "prepare": "pnpm pgc"
-  },
-  "prisma": {
-    "schema": "./src/prisma/schema.prisma"
+    "prettify": "prettier --loglevel warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'"
   },
   "dependencies": {
-    "@prisma/client": "^5.2.0",
+    "@prisma/client": "^6.6.0",
     "@trpc/server": "^10.37.1",
     "cors": "^2.8.5",
     "express": "^5.1.0",
@@ -28,6 +22,6 @@
     "@types/express": "^5.0.1",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.16",
-    "prisma": "^5.2.0"
+    "prisma": "^6.6.0"
   }
 }
