@@ -1,6 +1,9 @@
+// import _ from 'lodash';
+// import { patterns } from '../lib/patterns';
 import { trpc } from '../lib/trpc';
 
 export const getPatternsTrpcRoute = trpc.procedure.query( async ({ctx}) => {
+  // return { patterns: patterns.map((pattern) => _.pick(pattern, ['name', 'englishName', 'id', 'type'])) };
   const patterns = await ctx.prisma.pattern.findMany({
     select: {
       id: true,
@@ -9,6 +12,4 @@ export const getPatternsTrpcRoute = trpc.procedure.query( async ({ctx}) => {
       type: true,
     },
   });
-
-  return { patterns }
 });
