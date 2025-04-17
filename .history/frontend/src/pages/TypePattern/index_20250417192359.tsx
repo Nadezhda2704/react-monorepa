@@ -52,7 +52,7 @@ export const PatternTypePage = () => {
       <div>
         {patternsTypeList.map((pattern) => (
           <div className={css.item} key={pattern.id}>
-            <Link className={css.link} to={getPatternRoute({ patternId: pattern.id })}>
+            <Link className={css.item} to={getPatternRoute({ patternId: pattern.id })}>
               <h2>
                 <span>{pattern.name}</span>
                 <span> ({pattern.englishName})</span>

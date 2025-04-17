@@ -18,8 +18,8 @@ export const AllPatternsPage = () => {
     <div>
       <h1 className={css.title}>All Patterns</h1>
       {data?.patterns.map((pattern) => (
-        <div className={css.item} key={pattern.id}>
-          <Link className={css.link} to={getPatternRoute({ patternId: pattern.id })}>
+        <div key={pattern.id}>
+          <Link className={css.item} to={getPatternRoute({ patternId: pattern.id })}>
             <span>{pattern.name}</span>
             <span> ({pattern.englishName})</span>
           </Link>
