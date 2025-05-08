@@ -6,30 +6,36 @@ import css from './index.module.scss';
 export const PatternPage = () => {
   const { patternId } = useParams() as GetPatternRouteParams;
 
-  const { data, error, isLoading, isFetching, isError } = trpc.getPattern.useQuery({
+  // const { data, error, isLoading, isFetching, isError } = trpc.getPattern.useQuery({
+  //   patternId,
+  // });
+
+  const pattern = trpc.getPattern.useQuery({
     patternId,
   });
 
-  if (isLoading || isFetching) {
-    return <span>Loading...</span>;
-  }
+  const data = pattern[0].result.data;
 
-  if (isError) {
-    return <span>Error: {error.message}</span>;
-  }
+  // if (isLoading || isFetching) {
+  //   return <span>Loading...</span>;
+  // }
 
-  if (!data) {
+  // if (isError) {
+  //   return <span>Error: {error.message}</span>;
+  // }
+
+  if (!data.pattern) {
     return <span>Pattern not found</span>;
   }
 
   return (
     <div>
       <h1 className={css.title}>
-        <span>{data.name}</span>
-        <span> ({data.englishName})</span>
+        <span>{data.pattern.name}</span>
+        <span> ({data.pattern.englishName})</span>
       </h1>
       
-      <p className={css.description}>{data.description}</p>
+      <p className={css.description}>{data.pattern.description}</p>
 
       <div className={css.wrap}>
         <a className={css.item} href="#">

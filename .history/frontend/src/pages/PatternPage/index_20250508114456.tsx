@@ -10,6 +10,10 @@ export const PatternPage = () => {
     patternId,
   });
 
+  
+
+  console.log('data', data);
+
   if (isLoading || isFetching) {
     return <span>Loading...</span>;
   }

@@ -10,6 +10,10 @@ export const PatternPage = () => {
     patternId,
   });
 
+  
+
+  console.log('data', data);
+
   if (isLoading || isFetching) {
     return <span>Loading...</span>;
   }
@@ -25,11 +29,11 @@ export const PatternPage = () => {
   return (
     <div>
       <h1 className={css.title}>
-        <span>{data.name}</span>
-        <span> ({data.englishName})</span>
+        <span>{data.pattern.name}</span>
+        <span> ({data.pattern.englishName})</span>
       </h1>
       
-      <p className={css.description}>{data.description}</p>
+      <p className={css.description}>{data.pattern.description}</p>
 
       <div className={css.wrap}>
         <a className={css.item} href="#">
