@@ -23,7 +23,7 @@ export const applyTrpcToExpressApp = async (expressApp: Express, appContext: App
       playgroundEndpoint: '/trpc-playground',
       router: trpcRouter,
       request: {
-        superjson: false,
+        superjson: true,
       },
     })
   );
