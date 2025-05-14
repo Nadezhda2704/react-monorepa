@@ -1,5 +1,14 @@
 @import '../../styles/mixins';
 
+.title {
+  @include H2;
+}
+
+.description {
+  color: $secondary-text;
+  margin-bottom: 32px
+}
+
 .wrap {
   display: flex;
   flex-direction: column;

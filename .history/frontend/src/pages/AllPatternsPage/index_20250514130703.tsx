@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { trpc } from '../../lib/trpc';
 import { getPatternRoute } from '../../lib/routes';
 import css from './index.module.scss';
-import { Section } from '../../components/Section';
+import { Segment } from '../../components/Segment';
 
 export const AllPatternsPage = () => {
   const { data, error, isLoading, isFetching, isError } = trpc.getPatterns.useQuery();
@@ -16,7 +16,7 @@ export const AllPatternsPage = () => {
   }
 
   return (
-    <Section title="All Patterns">
+    <Segment title="All Patterns">
       {data?.patterns.map((pattern) => (
         <div className={css.item} key={pattern.id}>
           <Link className={css.link} to={getPatternRoute({ patternId: pattern.id })}>
@@ -25,6 +25,6 @@ export const AllPatternsPage = () => {
           </Link>
         </div>
       ))}
-    </Section>
+    </Segment>
   );
 };

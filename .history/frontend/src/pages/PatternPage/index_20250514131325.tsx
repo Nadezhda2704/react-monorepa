@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { GetPatternRouteParams } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
 import css from './index.module.scss';
-import { Section } from '../../components/Section';
+import { Segment } from '../../components/Section';
 
 export const PatternPage = () => {
   const { patternId } = useParams() as GetPatternRouteParams;
@@ -24,7 +24,7 @@ export const PatternPage = () => {
   }
 
   return (
-    <Section
+    <Segment
       title={
         <>
           <span>{data.name}</span>
@@ -41,6 +41,6 @@ export const PatternPage = () => {
           view video
         </a>
       </div>
-    </Section>
+    </Segment>
   );
 };

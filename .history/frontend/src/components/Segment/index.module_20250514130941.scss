@@ -1,0 +1,23 @@
+@import '../../styles/_vars.scss';
+@import '../../styles/_mixins.scss';
+
+.segment {
+    h1.title {
+        @include H1;
+    }
+
+    h2.title {
+        @include H2;
+    }
+
+    .description {
+        font-size: 18px;
+        margin-top: 5px;
+        color: $secondary-text;
+        margin-bottom: 32px
+    }
+
+    .content {
+        margin-top: 12px;
+    }
+}

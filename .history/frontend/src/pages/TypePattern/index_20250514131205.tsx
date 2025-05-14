@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { getPatternRoute, GetTypePatternRouteParams } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
 import css from './index.module.scss';
-import { Section } from '../../components/Section';
+import { Segment } from '../../components/Segment';
 
 export const PatternTypePage = () => {
   const { patternType } = useParams() as GetTypePatternRouteParams;
@@ -40,7 +40,7 @@ export const PatternTypePage = () => {
   }
 
   return (
-    <Section
+    <Segment
       title={
         <>
           <span>{patternTypeInfo?.name}</span>
@@ -61,6 +61,6 @@ export const PatternTypePage = () => {
           </div>
         ))}
       </div>
-    </Section>
+    </Segment>
   );
 };
