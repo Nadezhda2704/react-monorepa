@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
-import { getAllPatternsRoute, getSignUpRoute, getTypePatternRoute } from '../../lib/routes';
+import { getAllPatternsRoute, getTypePatternRoute } from '../../lib/routes';
 import css from './index.module.scss';
 
 export const Layout = () => {

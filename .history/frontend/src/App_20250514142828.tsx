@@ -3,7 +3,6 @@ import {
   getAllPatternsRoute,
   getPatternRoute,
   getPatternRouteParams,
-  getSignUpRoute,
   getTypePatternRoute,
   getTypePatternRouteParams,
 } from './lib/routes';
@@ -13,7 +12,6 @@ import { PatternPage } from './pages/PatternPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/global.scss';
 import { PatternTypePage } from './pages/TypePattern';
-import { SignUpPage } from './pages/signUpPage';
 
 const App = () => {
   return (
