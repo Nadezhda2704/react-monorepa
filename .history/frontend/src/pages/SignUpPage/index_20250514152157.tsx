@@ -21,7 +21,6 @@ export const SignUpPage = () => {
         <Input name="password" label="Пароль" state={state} setState={setState} />
         <Input name="passwordRepeat" label="Повторите пароль" state={state} setState={setState} />
 
-        <br/>
         <button type="submit">Отправить</button>
       </form>
     </Section>

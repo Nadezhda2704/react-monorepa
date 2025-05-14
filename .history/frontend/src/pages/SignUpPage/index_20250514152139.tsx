@@ -19,9 +19,26 @@ export const SignUpPage = () => {
       >
         <Input name="nickName" label="Nickname" state={state} setState={setState} />
         <Input name="password" label="Пароль" state={state} setState={setState} />
-        <Input name="passwordRepeat" label="Повторите пароль" state={state} setState={setState} />
+        <Input name="password" label="Пароль" state={state} setState={setState} />
 
-        <br/>
+
+        <label>
+          Повторите пароль
+          <br />
+          <input
+            onChange={(e) => {
+              setState({ ...state, passwordRepeat: e.target.value });
+            }}
+            value={state.passwordRepeat}
+            type="password"
+            placeholder="Повторите пароль"
+            name="passwordRepeat"
+            required
+          />
+        </label>
+
+        <br />
+        <br />
         <button type="submit">Отправить</button>
       </form>
     </Section>
