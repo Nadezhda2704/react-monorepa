@@ -1,6 +1,6 @@
 import { type FormikProps } from 'formik';
 
-export const Input = ({ name, label, type='text', formik }: { name: string; label: string; type?: string; formik: FormikProps<any> }) => {
+export const Input = ({ name, label, type='text', formik }: { name: string; label: string; type: string; formik: FormikProps<any> }) => {
   const value = formik.values[name];
   return (
     <div style={{ marginBottom: 10 }}>

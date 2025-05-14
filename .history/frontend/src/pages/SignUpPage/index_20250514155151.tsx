@@ -23,8 +23,8 @@ export const SignUpPage = () => {
         }}
       >
         <Input name="nickName" label="Nickname" formik={formik} />
-        <Input name="password" label="Пароль" type="password" formik={formik} />
-        <Input name="passwordRepeat" label="Повторите пароль" type="password" formik={formik} />
+        <Input name="password" label="Пароль" formik={formik} />
+        <Input name="passwordRepeat" label="Повторите пароль" formik={formik} />
 
         <br />
         <button type="submit">Отправить</button>

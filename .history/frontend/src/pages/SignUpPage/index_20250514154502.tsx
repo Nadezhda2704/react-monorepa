@@ -6,8 +6,8 @@ export const SignUpPage = () => {
   const formik = useFormik({
     initialValues: {
       nickName: '',
-      password: '',
-      passwordRepeat: '',
+        password: '',
+        passwordRepeat: '',
     },
     onSubmit: (values) => {
       console.info('Submitted', values);
@@ -17,14 +17,13 @@ export const SignUpPage = () => {
   return (
     <Section title="Регистрация">
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
+        onSubmit={() => {
           formik.handleSubmit();
         }}
       >
         <Input name="nickName" label="Nickname" formik={formik} />
-        <Input name="password" label="Пароль" type="password" formik={formik} />
-        <Input name="passwordRepeat" label="Повторите пароль" type="password" formik={formik} />
+        <Input name="password" label="Пароль" formik={formik} />
+        <Input name="passwordRepeat" label="Повторите пароль" formik={formik} />
 
         <br />
         <button type="submit">Отправить</button>
