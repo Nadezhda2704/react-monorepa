@@ -51,9 +51,7 @@ export const SignUpPage = () => {
         {!formik.isValid && !!formik.submitCount && (
           <div className={css.error}>Проверьте правильность заполнения формы</div>
         )}
-        <button type="submit" disabled={formik.isSubmitting}>
-          {formik.isSubmitting ? 'Отправка ...' : 'Отправить'}
-        </button>
+        <button type="submit" disabled={formik.isSubmitting}>Отправить</button>
       </form>
     </Section>
   );
