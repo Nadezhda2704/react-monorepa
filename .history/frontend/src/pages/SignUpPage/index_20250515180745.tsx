@@ -16,7 +16,8 @@ export const SignUpPage = () => {
         .object({
           nickName: z
             .string()
-            .regex(/^[a-z0-9-]+$/, 'NickName может содержать строчные буквы, цифры, и дефис'),
+            .min(1, 'Поле обязательно для заполнения')
+            .regex(/^[a-z0-9-]+$/, 'NickName может содержать буквы, цифры, и дефис'),
           password: z.string().min(1, 'Поле обязательно для заполнения'),
           confirmPassword: z.string().min(1, 'Поле обязательно для заполнения'),
         })
@@ -30,6 +31,23 @@ export const SignUpPage = () => {
           }
         })
     ),
+    // validate: (values) => {
+    //   const errors: Partial<typeof values> = {};
+    //   if (!values.nickName) {
+    //     errors.nickName = 'Поле обязательно для заполнения';
+    //   } else if (!values.nickName.match(/^[a-z0-9-]+$/)) {
+    //     errors.nickName = 'NickName может содержать буквы, цыфры, и дефис';
+    //   }
+    //   if (!values.password) {
+    //     errors.password = 'Поле обязательно для заполнения';
+    //   }
+    //   if (!values.confirmPassword) {
+    //     errors.confirmPassword = 'Поле обязательно для заполнения';
+    //   } else if (values.password !== values.confirmPassword) {
+    //     errors.confirmPassword = 'Пароли не совпадают';
+    //   }
+    //   return errors;
+    // },
     onSubmit: (values) => {
       console.info('Submitted', values);
     },

@@ -18,7 +18,7 @@
     "@trpc/client": "^10.37.1",
     "@trpc/react-query": "^10.37.1",
     "formik": "^2.4.6",
-    "formik-validator-zod": "^1.0.2",
+    "formik-validator-zod": "^2.2.0",
     "include-media": "^2.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.1.0",

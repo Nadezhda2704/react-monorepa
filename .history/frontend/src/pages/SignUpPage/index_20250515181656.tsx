@@ -30,6 +30,23 @@ export const SignUpPage = () => {
           }
         })
     ),
+    // validate: (values) => {
+    //   const errors: Partial<typeof values> = {};
+    //   if (!values.nickName) {
+    //     errors.nickName = 'Поле обязательно для заполнения';
+    //   } else if (!values.nickName.match(/^[a-z0-9-]+$/)) {
+    //     errors.nickName = 'NickName может содержать буквы, цыфры, и дефис';
+    //   }
+    //   if (!values.password) {
+    //     errors.password = 'Поле обязательно для заполнения';
+    //   }
+    //   if (!values.confirmPassword) {
+    //     errors.confirmPassword = 'Поле обязательно для заполнения';
+    //   } else if (values.password !== values.confirmPassword) {
+    //     errors.confirmPassword = 'Пароли не совпадают';
+    //   }
+    //   return errors;
+    // },
     onSubmit: (values) => {
       console.info('Submitted', values);
     },

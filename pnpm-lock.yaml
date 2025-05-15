@@ -84,6 +84,9 @@ importers:
       formik:
         specifier: ^2.4.6
         version: 2.4.6(react@19.1.0)
+      formik-validator-zod:
+        specifier: ^1.0.2
+        version: 1.0.2(formik@2.4.6(react@19.1.0))(zod@3.24.2)
       include-media:
         specifier: ^2.0.0
         version: 2.0.0
@@ -102,6 +105,9 @@ importers:
       sass:
         specifier: ^1.86.3
         version: 1.86.3
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
     devDependencies:
       '@eslint/js':
         specifier: ^9.21.0
@@ -1477,6 +1483,12 @@ packages:
   foreground-child@3.3.1:
     resolution: {integrity: sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==}
     engines: {node: '>=14'}
+
+  formik-validator-zod@1.0.2:
+    resolution: {integrity: sha512-1348tUpeHUCHf6HcNT/XLf2odSddbPgbUR1WAPFUM8vbXA+d6cj6sC1oV7aoo0dr9oFQm46gbz7pSdQiydFEuQ==}
+    peerDependencies:
+      formik: ^2.2.9
+      zod: ^3.19.1
 
   formik@2.4.6:
     resolution: {integrity: sha512-A+2EI7U7aG296q2TLGvNapDNTZp1khVt5Vk0Q/fyfSROss0V/V6+txt2aJnwEos44IxTCW/LYAi/zgWzlevj+g==}
@@ -3846,6 +3858,11 @@ snapshots:
     dependencies:
       cross-spawn: 7.0.6
       signal-exit: 4.1.0
+
+  formik-validator-zod@1.0.2(formik@2.4.6(react@19.1.0))(zod@3.24.2):
+    dependencies:
+      formik: 2.4.6(react@19.1.0)
+      zod: 3.24.2
 
   formik@2.4.6(react@19.1.0):
     dependencies:
