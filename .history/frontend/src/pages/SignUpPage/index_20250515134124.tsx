@@ -22,7 +22,7 @@ export const SignUpPage = () => {
       if (!values.passwordRepeat) {
         errors.passwordRepeat = 'Поле обязательно для заполнения';
       } else if (values.password !== values.passwordRepeat) {
-        errors.passwordRepeat = 'Пароли не совпадают';
+        errors.passwordRepeat = 'Пароли не совпадают'ж
       } return errors;
     },
     onSubmit: (values) => {

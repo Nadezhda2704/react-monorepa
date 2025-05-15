@@ -8,7 +8,7 @@ export const Input = ({ name, label, type='text', formik }: { name: string; labe
     <div style={{ marginBottom: 10 }}>
       <label htmlFor={name}>{label}</label>
       <br />
-      {error && <div style={{ color: 'red', fontSize: '14px' }}>{error}</div>}
+      {error && <div style={{ color: 'red', fontSize: '12px' }}>{error}</div>}
       <input
         type={type}
         onChange={(e) => {

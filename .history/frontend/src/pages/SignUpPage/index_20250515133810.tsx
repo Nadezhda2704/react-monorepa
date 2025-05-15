@@ -21,9 +21,8 @@ export const SignUpPage = () => {
       } 
       if (!values.passwordRepeat) {
         errors.passwordRepeat = 'Поле обязательно для заполнения';
-      } else if (values.password !== values.passwordRepeat) {
-        errors.passwordRepeat = 'Пароли не совпадают';
-      } return errors;
+      }
+      return errors;
     },
     onSubmit: (values) => {
       console.info('Submitted', values);
@@ -38,9 +37,9 @@ export const SignUpPage = () => {
           formik.handleSubmit();
         }}
       >
-        <Input name="nickName" label="Nickname*" formik={formik} />
-        <Input name="password" label="Пароль*" type="password" formik={formik} />
-        <Input name="passwordRepeat" label="Повторите пароль*" type="password" formik={formik} />
+        <Input name="nickName" label="Nickname" formik={formik} />
+        <Input name="password" label="Пароль" type="password" formik={formik} />
+        <Input name="passwordRepeat" label="Повторите пароль" type="password" formik={formik} />
 
         <br />
         {!formik.isValid && <div style={{ color: 'red' }}>Проверьте правильность заполнения формы</div>}
