@@ -1,0 +1,6 @@
+@import '../../styles/_mixins';
+
+.error {
+    @include error;
+    margin-top: 2px;
+}

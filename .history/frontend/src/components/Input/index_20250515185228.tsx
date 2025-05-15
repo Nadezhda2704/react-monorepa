@@ -18,20 +18,13 @@ export const Input = ({
   const value = formik.values[name];
   const error = formik.errors[name] as string | undefined;
   const touched = formik.touched[name];
-  const invalid = !!touched && !!error;
-  const disabled = formik.isSubmitting;
 
   return (
     <div className={cn({ [css.field]: true, [css.disabled]: disabled })}>
-      <label className={css.label} htmlFor={name}>
-        {label}
-      </label>
+      <label htmlFor={name}>{label}</label>
+      <br />
+      {!!touched && !!error && <div style={{ color: 'red', fontSize: '14px' }}>{error}</div>}
       <input
-        className={cn({
-          [css.input]: true,
-          [css.invalid]: invalid,
-        })}
-        style={{ maxWidth }}
         type={type}
         onChange={(e) => {
           void formik.setFieldValue(name, e.target.value);
@@ -42,9 +35,7 @@ export const Input = ({
         value={value}
         name={name}
         id={name}
-        disabled={disabled}
       />
-      {invalid && <div className={css.error}>{error}</div>}
     </div>
   );
 };

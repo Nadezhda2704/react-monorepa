@@ -39,3 +39,8 @@
   font-size: 24px;
   font-weight: bold;
 }
+
+@mixin error {
+  color: $red;
+    font-size: 14px;
+}

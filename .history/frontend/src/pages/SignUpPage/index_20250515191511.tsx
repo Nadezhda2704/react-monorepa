@@ -1,10 +1,8 @@
-import { Section } from '../../components/Section';
-import { Input } from '../../components/Input';
+import { Section } from "../../components/Section";
+import { Input } from "../../components/Input";
 import { useFormik } from 'formik';
-import { withZodSchema } from 'formik-validator-zod';
-import { z } from 'zod';
-import css from './index.module.scss';
-
+import { withZodSchema } from "formik-validator-zod";
+import {z} from 'zod';
 
 export const SignUpPage = () => {
   const formik = useFormik({
@@ -16,7 +14,9 @@ export const SignUpPage = () => {
     validate: withZodSchema(
       z
         .object({
-          nickName: z.string().regex(/^[a-z0-9-]+$/, 'NickName может содержать строчные буквы, цифры, и дефис'),
+          nickName: z
+            .string()
+            .regex(/^[a-z0-9-]+$/, 'NickName может содержать строчные буквы, цифры, и дефис'),
           password: z.string().min(1, 'Поле обязательно для заполнения'),
           confirmPassword: z.string().min(1, 'Поле обязательно для заполнения'),
         })
@@ -49,10 +49,10 @@ export const SignUpPage = () => {
 
         <br />
         {!formik.isValid && !!formik.submitCount && (
-          <div className={css.error}>Проверьте правильность заполнения формы</div>
+          <div className="error">Проверьте правильность заполнения формы</div>
         )}
         <button type="submit">Отправить</button>
       </form>
     </Section>
   );
-};
+}

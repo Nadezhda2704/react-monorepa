@@ -26,6 +26,7 @@ export const Input = ({
       <label className={css.label} htmlFor={name}>
         {label}
       </label>
+      {!!touched && !!error && <div style={{ color: 'red', fontSize: '14px' }}>{error}</div>}
       <input
         className={cn({
           [css.input]: true,
@@ -42,9 +43,7 @@ export const Input = ({
         value={value}
         name={name}
         id={name}
-        disabled={disabled}
       />
-      {invalid && <div className={css.error}>{error}</div>}
     </div>
   );
 };

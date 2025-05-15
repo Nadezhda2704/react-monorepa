@@ -42,7 +42,6 @@ export const Input = ({
         value={value}
         name={name}
         id={name}
-        disabled={disabled}
       />
       {invalid && <div className={css.error}>{error}</div>}
     </div>
