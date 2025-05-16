@@ -1,6 +1,6 @@
-import { trpc } from '../lib/trpc';
+import { trpc } from '../../lib/trpc';
 
-export const getPatternsTrpcRoute = trpc.procedure.query( async ({ctx}) => {
+export const getPatternsTrpcRoute = trpc.procedure.query(async ({ ctx }) => {
   const patterns = await ctx.prisma.pattern.findMany({
     select: {
       id: true,
@@ -10,5 +10,5 @@ export const getPatternsTrpcRoute = trpc.procedure.query( async ({ctx}) => {
     },
   });
 
-  return { patterns }
+  return { patterns };
 });
