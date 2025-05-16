@@ -1,0 +1,11 @@
+.formItems {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    align-items: stretch;
+
+    button {
+        align-self: flex-start;
+    }
+
+}

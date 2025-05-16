@@ -5,7 +5,6 @@ import { withZodSchema } from 'formik-validator-zod';
 import { z } from 'zod';
 import css from './index.module.scss';
 import { Button } from '../../components/Button';
-import { FormItems } from '../../components/FormItems';
 
 
 export const SignUpPage = () => {
@@ -50,10 +49,11 @@ export const SignUpPage = () => {
           <Input name="password" label="Пароль*" type="password" formik={formik} />
           <Input name="confirmPassword" label="Повторите пароль*" type="password" formik={formik} />
 
+          <br />
           {!formik.isValid && !!formik.submitCount && (
             <div className={css.error}>Проверьте правильность заполнения формы</div>
           )}
-          <Button loading={formik.isSubmitting}>Отправить</Button>
+          <Button loading={formik.isSubmitting}>Create Idea</Button>
         </FormItems>
       </form>
     </Section>
