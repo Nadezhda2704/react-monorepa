@@ -17,16 +17,14 @@ export const SignUpPage = () => {
   const signUp = trpc.signUp.useMutation();
   const formik = useFormik({
     initialValues: {
-      nick: '',
+      nickName: '',
       password: '',
       confirmPassword: '',
     },
     validate: withZodSchema(
       z
         .object({
-          nick: z
-            .string()
-            .regex(/^[a-z0-9-]+$/, 'nick может содержать строчные буквы латинского алфавита, цифры, и дефис'),
+          nickName: z.string().regex(/^[a-z0-9-]+$/, 'NickName может содержать строчные буквы латинского алфавита, цифры, и дефис'),
           password: z.string().min(1, 'Поле обязательно для заполнения'),
           confirmPassword: z.string().min(1, 'Поле обязательно для заполнения'),
         })
@@ -50,6 +48,7 @@ export const SignUpPage = () => {
           setSuccessMessageVisible(false);
         }, 3000);
       } catch (err: any) {
+        console.log('err', err.message);
         setSubmittingError(err.message);
       }
     },
@@ -64,7 +63,7 @@ export const SignUpPage = () => {
         }}
       >
         <FormItems>
-          <Input name="nick" label="nick*" formik={formik} />
+          <Input name="nickName" label="Nickname*" formik={formik} />
           <Input name="password" label="Пароль*" type="password" formik={formik} />
           <Input name="confirmPassword" label="Повторите пароль*" type="password" formik={formik} />
 
