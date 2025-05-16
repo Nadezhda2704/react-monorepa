@@ -1,0 +1,17 @@
+@import '../../styles/_vars';
+@import '../../styles/_mixins';
+
+.informer {
+    padding: 10px;
+    border-radius: 4px;
+
+    &.red {
+        background-color: #ffd1d1;
+        color: $red;
+    }
+
+    &.green {
+        background-color: #d7ffd7;
+        color: $accent;
+    }
+}
