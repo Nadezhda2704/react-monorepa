@@ -23,8 +23,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path={getSignInRoute()} element={<SignInPage />} />
-            <Route path={getSignUpRoute()} element={<SignUpPage />} />
+            <Route path={getSignInRoute()} element={<SignUpPage />} />
+            <Route path={getSignUpRoute()} element={<SignInPage />} />
             <Route index path={getAllPatternsRoute()} element={<AllPatternsPage />}></Route>
             <Route path={getPatternRoute(getPatternRouteParams)} element={<PatternPage />}></Route>
             <Route path={getTypePatternRoute(getTypePatternRouteParams)} element={<PatternTypePage />}></Route>

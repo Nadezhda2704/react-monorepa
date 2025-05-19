@@ -45,9 +45,9 @@ export const SignUpPage = () => {
         }}
       >
         <FormItems>
-          <Input name="nick" label="Логин" formik={formik} />
-          <Input name="password" label="Пароль" type="password" formik={formik} />
-          <Input name="confirmPassword" label="Повторите пароль" type="password" formik={formik} />
+          <Input name="nick" label="nick*" formik={formik} />
+          <Input name="password" label="Пароль*" type="password" formik={formik} />
+          <Input name="confirmPassword" label="Повторите пароль*" type="password" formik={formik} />
 
           {!formik.isValid && !!formik.submitCount && (
             <Informer color="red">Проверьте правильность заполнения формы</Informer>

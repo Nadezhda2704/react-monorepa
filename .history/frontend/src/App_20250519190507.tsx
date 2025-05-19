@@ -15,7 +15,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/global.scss';
 import { PatternTypePage } from './pages/TypePattern';
 import { SignUpPage } from './pages/SignUpPage';
-import { SignInPage } from './pages/SignInPage';
 
 const App = () => {
   return (
@@ -23,7 +22,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path={getSignInRoute()} element={<SignInPage />} />
+            <Route path={getSignInRoute()} element={<SignUpPage />} />
             <Route path={getSignUpRoute()} element={<SignUpPage />} />
             <Route index path={getAllPatternsRoute()} element={<AllPatternsPage />}></Route>
             <Route path={getPatternRoute(getPatternRouteParams)} element={<PatternPage />}></Route>

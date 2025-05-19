@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
-import { getAllPatternsRoute, getSignInRoute, getSignUpRoute, getTypePatternRoute } from '../../lib/routes';
+import { getAllPatternsRoute, getSignUpRoute, getTypePatternRoute } from '../../lib/routes';
 import css from './index.module.scss';
 
 export const Layout = () => {
@@ -9,7 +9,7 @@ export const Layout = () => {
         <Link className={css.logo} to={getAllPatternsRoute()}>
           Home
         </Link>
-        <Link className={css.logo} to={getSignInRoute()}>
+        <Link className={css.logo} to={getSignUpRoute()}>
           Вход
         </Link>
         <Link className={css.logo} to={getSignUpRoute()}>

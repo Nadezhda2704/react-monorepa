@@ -3,6 +3,7 @@ import { Section } from '../../components/Section';
 import { Input } from '../../components/Input';
 import { useFormik } from 'formik';
 import { withZodSchema } from 'formik-validator-zod';
+import css from './index.module.scss';
 import { Button } from '../../components/Button';
 import { FormItems } from '../../components/FormItems';
 import { trpc } from '../../lib/trpc';
@@ -45,12 +46,12 @@ export const SignUpPage = () => {
         }}
       >
         <FormItems>
-          <Input name="nick" label="Логин" formik={formik} />
-          <Input name="password" label="Пароль" type="password" formik={formik} />
-          <Input name="confirmPassword" label="Повторите пароль" type="password" formik={formik} />
+          <Input name="nick" label="nick*" formik={formik} />
+          <Input name="password" label="Пароль*" type="password" formik={formik} />
+          <Input name="confirmPassword" label="Повторите пароль*" type="password" formik={formik} />
 
           {!formik.isValid && !!formik.submitCount && (
-            <Informer color="red">Проверьте правильность заполнения формы</Informer>
+            <div className={css.error}>Проверьте правильность заполнения формы</div>
           )}
 
           {submittingError && <Informer color="red">{submittingError}</Informer>}
