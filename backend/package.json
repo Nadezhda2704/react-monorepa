@@ -19,20 +19,21 @@
     "@prisma/client": "^5.2.0",
     "@trpc/server": "^10.37.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "lodash": "^4.17.21",
-    "trpc-playground": "^1.0.4",
-    "zod": "^3.24.2",
     "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
     "passport": "^0.6.0",
-    "passport-jwt": "^4.0.1"
+    "passport-jwt": "^4.0.1",
+    "trpc-playground": "^1.0.4",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.16",
-    "@types/jsonwebtoken": "^9.0.2",
     "@types/passport": "^1.0.12",
     "@types/passport-jwt": "^3.0.9",
     "prisma": "^5.2.0"

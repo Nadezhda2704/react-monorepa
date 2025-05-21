@@ -1,1 +1,0 @@
-DATABASE_URL=postgresql://patterns:patterns@localhost:5432/patterns?schema=public
