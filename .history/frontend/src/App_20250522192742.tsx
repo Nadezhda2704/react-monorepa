@@ -30,9 +30,9 @@ const App = () => {
           <Route element={<Layout />}>
             <Route path={getSignInRoute()} element={<SignInPage />} />
             <Route path={getSignUpRoute()} element={<SignUpPage />} />
-            <Route index path={getAllPatternsRoute()} element={<AllPatternsPage />} />
-            <Route path={getPatternRoute(getPatternRouteParams)} element={<PatternPage />} />
-            <Route path={getTypePatternRoute(getTypePatternRouteParams)} element={<PatternTypePage />} />
+            <Route index path={getAllPatternsRoute()} element={<AllPatternsPage />}></Route>
+            <Route path={getPatternRoute(getPatternRouteParams)} element={<PatternPage />}></Route>
+            <Route path={getTypePatternRoute(getTypePatternRouteParams)} element={<PatternTypePage />}></Route>
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
