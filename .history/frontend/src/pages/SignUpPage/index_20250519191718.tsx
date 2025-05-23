@@ -1,4 +1,4 @@
-import { zSignInTrpcInput } from '@ideanick/backend/src/router/signIn/input'
+import { zSignInTrpcInput } from '@patterns/backend/src/router/signIn/input'
 import { Section } from '../../components/Section';
 import { Input } from '../../components/Input';
 import { useFormik } from 'formik';

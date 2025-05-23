@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { getPatternRoute, GetTypePatternRouteParams } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
-import type { TrpcRouter } from '@ideanick/backend/src/trpc';
+import type { TrpcRouter } from '@patterns/backend/src/trpc';
 import css from './index.module.scss';
 import { Segment } from '../../components/Segment';
 

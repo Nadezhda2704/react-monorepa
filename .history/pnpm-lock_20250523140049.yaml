@@ -90,7 +90,7 @@ importers:
 
   frontend:
     dependencies:
-      '@patterns/backend':
+      '@ideanick/backend':
         specifier: workspace:*
         version: link:../backend
       '@tanstack/react-query':
