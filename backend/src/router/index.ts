@@ -5,6 +5,7 @@ import { getAuthorizedUserTrpcRoute } from './getAuthorizedUser'
 import { getPatternTrpcRoute } from './getPattern'
 import { getPatternsTrpcRoute } from './getPatterns'
 import { getTypesPatternsTrpcRoute } from './getTypesPatterns'
+import { postReadPatternTrpcRoute } from './postReadPattern'
 import { signInTrpcRoute } from './signIn'
 import { signUpTrpcRoute } from './signUp'
 // @endindex
@@ -16,6 +17,7 @@ export const trpcRouter = trpc.router({
   getPattern: getPatternTrpcRoute,
   getPatterns: getPatternsTrpcRoute,
   getTypesPatterns: getTypesPatternsTrpcRoute,
+  postReadPattern: postReadPatternTrpcRoute,
   signIn: signInTrpcRoute,
   signUp: signUpTrpcRoute,
   // @endindex
