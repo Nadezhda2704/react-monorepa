@@ -1,8 +1,8 @@
 import { trpc } from '../../lib/trpc';
-import { zPostReadPatternTrpcInput } from './input';
+import { zDeleteReadPatternTrpcInput } from './input';
 
-export const postReadPatternTrpcRoute = trpc.procedure
-  .input(zPostReadPatternTrpcInput)
+export const deleteReadPatternTrpcRoute = trpc.procedure
+  .input(zDeleteReadPatternTrpcInput)
   .mutation(async ({ ctx, input }) => {
     const authorizedUserId = ctx.authorizedUser?.id;
     let user = null;
@@ -22,16 +22,16 @@ export const postReadPatternTrpcRoute = trpc.procedure
     }
 
     let updatedReadPatterns: string[] = [];
-    const addingPatternId = input.patternId;
+    const deletingPatternId = input.patternId;
 
     if (!user.readPatterns.length) {
-      updatedReadPatterns = [addingPatternId];
+      updatedReadPatterns = [];
     } else {
       const currentReadPatterns = user.readPatterns;
-      if (!currentReadPatterns.includes(addingPatternId)) {
-        updatedReadPatterns = [...currentReadPatterns, addingPatternId];
+      if (currentReadPatterns.includes(deletingPatternId)) {
+        updatedReadPatterns = currentReadPatterns.filter((patternId) => patternId !== deletingPatternId); 
       } else {
-        console.log('Id уже находится в массиве');
+        console.log('Id в массиве отсутствует');
       }
     }
 
