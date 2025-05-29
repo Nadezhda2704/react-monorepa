@@ -8,9 +8,9 @@ import { Informer } from '../../components/Informer';
 import React from 'react';
 
 export const PatternPage = () => {
-  const [upReadPatterns, setUpReadPatterns] = React.useState([]);
-
   const { patternId } = useParams() as GetPatternRouteParams;
+
+  const [upReadPatterns, setUpReadPatterns] = React.useState([]);
 
   const { data, error, isLoading, isFetching, isError } = trpc.getPattern.useQuery({
     patternId,
@@ -18,10 +18,11 @@ export const PatternPage = () => {
 
   let getReadPatterns: string[] = [];
   if (!getReadPatterns.length) {
-    // toDO обработка ошибок статус загрузки
+    // toDo: обработка ошибок, показ статус загрузки
     getReadPatterns = trpc.getReadPatterns.useQuery().data?.readPatterns;
   }
 
+  // Изучен
   const markStudiedMutation = trpc.postReadPattern.useMutation();
 
   const markStudied = () => {
@@ -29,14 +30,25 @@ export const PatternPage = () => {
       { patternId },
       {
         onSuccess: ({ readPatterns }) => {
-          getReadPatterns = readPatterns;
           setUpReadPatterns(readPatterns);
         },
       }
     );
   };
 
-  // ToDo мутацию для кнопки к прочтению, использовать существующий стейт
+  // Повторить
+  const markToStudyMutation = trpc.deleteReadPattern.useMutation();
+
+  const markToStudy = () => {
+    markToStudyMutation.mutate(
+      { patternId },
+      {
+        onSuccess: ({ readPatterns }) => {
+          setUpReadPatterns(readPatterns);
+        },
+      }
+    );
+  };
 
   if (isLoading || isFetching) {
     return <span>Loading...</span>;
@@ -68,7 +80,9 @@ export const PatternPage = () => {
           Изучен
         </Button>
         {markStudiedMutation.error && <Informer color="red">Что-то пошло не так</Informer>}
-        <Button type="button">Повторить</Button>
+        <Button type="button" click={markToStudy} loading={markToStudyMutation.isPending}>
+          Повторить
+        </Button>
       </div>
 
       <div className={css.wrap}>

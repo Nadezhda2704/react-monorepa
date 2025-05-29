@@ -1,6 +1,7 @@
 import { trpc } from '../lib/trpc';
 
 // @index('./**/index.ts', f => `import { ${f.path.split('/').slice(0, -1).pop()}TrpcRoute } from '${f.path.split('/').slice(0, -1).join('/')}'`)
+import { deleteReadPatternTrpcRoute } from './deleteReadPattern'
 import { getAuthorizedUserTrpcRoute } from './getAuthorizedUser'
 import { getPatternTrpcRoute } from './getPattern'
 import { getPatternsTrpcRoute } from './getPatterns'
@@ -14,6 +15,7 @@ import { signUpTrpcRoute } from './signUp'
 
 export const trpcRouter = trpc.router({
   // @index('./**/index.ts', f => `${f.path.split('/').slice(0, -1).pop()}: ${f.path.split('/').slice(0, -1).pop()}TrpcRoute,`)
+  deleteReadPattern: deleteReadPatternTrpcRoute,
   getAuthorizedUser: getAuthorizedUserTrpcRoute,
   getPattern: getPatternTrpcRoute,
   getPatterns: getPatternsTrpcRoute,
