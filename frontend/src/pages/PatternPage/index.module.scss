@@ -3,6 +3,7 @@
 .wrap {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 8px;
 }
 
@@ -10,4 +11,10 @@
   @include Link( $dark-primary, $primary );
   font-size: 18px;
   margin-bottom: 8px;
+}
+
+.wrapBtn {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
 }
