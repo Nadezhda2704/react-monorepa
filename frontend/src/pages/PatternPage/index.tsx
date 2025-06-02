@@ -50,6 +50,12 @@ export const PatternPage = () => {
     );
   };
 
+  const checkIsRead = () => {
+    return upReadPatterns.length
+            ? upReadPatterns.includes(patternId)
+            : getReadPatterns && getReadPatterns.includes(patternId)
+  };
+
   if (isLoading || isFetching) {
     return <span>Loading...</span>;
   }
@@ -68,19 +74,17 @@ export const PatternPage = () => {
         <>
           <span>{data.name}</span>
           <span> ({data.englishName})</span>
-          {(upReadPatterns.length
-            ? upReadPatterns.includes(patternId)
-            : getReadPatterns && getReadPatterns.includes(patternId)) && <span> *Изучен*</span>}
+          {checkIsRead() && <span> *Изучен*</span>}
         </>
       }
       description={data.description}
     >
       <div className={css.wrapBtn}>
-        <Button type="button" click={markStudied} loading={markStudiedMutation.isPending}>
+        <Button type="button" click={markStudied} loading={markStudiedMutation.isPending} disabled={checkIsRead()}>
           Изучен
         </Button>
         {markStudiedMutation.error && <Informer color="red">Что-то пошло не так</Informer>}
-        <Button type="button" click={markToStudy} loading={markToStudyMutation.isPending}>
+        <Button type="button" click={markToStudy} loading={markToStudyMutation.isPending} disabled={!checkIsRead()}>
           Повторить
         </Button>
       </div>

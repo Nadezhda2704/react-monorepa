@@ -7,6 +7,12 @@ import { Section } from '../../components/Section';
 export const AllPatternsPage = () => {
   const { data, error, isLoading, isFetching, isError } = trpc.getPatterns.useQuery();
 
+  let getReadPatterns: string[] = [];
+  if (!getReadPatterns.length) {
+    // toDo: обработка ошибок, показ статус загрузки
+    getReadPatterns = trpc.getReadPatterns.useQuery().data?.readPatterns;
+  }
+
   if (isLoading || isFetching) {
     return <span>Loading...</span>;
   }
@@ -22,6 +28,7 @@ export const AllPatternsPage = () => {
           <Link className={css.link} to={getPatternRoute({ patternId: pattern.id })}>
             <span>{pattern.name}</span>
             <span> ({pattern.englishName})</span>
+            {getReadPatterns.length && getReadPatterns.includes(pattern.id) && <span>  **изучен**</span>}
           </Link>
         </div>
       ))}

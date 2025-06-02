@@ -27,6 +27,12 @@ export const PatternTypePage = () => {
     patternsTypeList = PatternsData.data?.patterns.filter((item) => item.type === patternType);
   }
 
+  let getReadPatterns: string[] = [];
+  if (!getReadPatterns.length) {
+    // toDo: обработка ошибок, показ статус загрузки
+    getReadPatterns = trpc.getReadPatterns.useQuery().data?.readPatterns;
+  }
+
   if (isLoading || isFetching) {
     return <span>Loading...</span>;
   }
@@ -56,6 +62,7 @@ export const PatternTypePage = () => {
               <h2>
                 <span>{pattern.name}</span>
                 <span> ({pattern.englishName})</span>
+                {getReadPatterns.length && getReadPatterns.includes(pattern.id) && <span> **изучен**</span>}
               </h2>
             </Link>
           </div>

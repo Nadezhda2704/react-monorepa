@@ -1,28 +1,33 @@
 @import '../../styles/_vars';
 @import '../../styles/_mixins';
 
+.wrap {
+  &.disabled {
+    cursor: not-allowed !important;
+  }
+}
+
 .button {
-    padding: 8px 15px;
-    color: $white;
-    background-color: $primary;
-    border: none;
-    font-weight: bold;
-    border-radius: $borderRadiusSmall;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color .2s ease-in-out;
+  padding: 8px 15px;
+  color: $white;
+  background-color: $primary;
+  border: none;
+  font-weight: bold;
+  border-radius: $borderRadiusSmall;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease-in-out;
 
-    &:hover {
-        background-color: $primary-hover;
-    }
+  &:hover {
+    background-color: $primary-hover;
+  }
 
-    &:active {
-        background-color:$dark-primary;
-    }
+  &:active {
+    background-color: $dark-primary;
+  }
 
-    &.disabled {
-        pointer-events: none;
-        background-color: #929292;
-        color: #d9d9d9;
-    }
+  &.disabled {
+    pointer-events: none;
+    background-color: $divider;
+  }
 }
