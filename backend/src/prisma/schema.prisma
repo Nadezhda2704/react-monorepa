@@ -21,6 +21,8 @@ model Pattern {
   englishName String
   type        String
   description String
+
+  Links Links[]
 }
 
 model TypeOfPattern {
@@ -28,4 +30,13 @@ model TypeOfPattern {
   name        String
   type        String
   description String
+}
+
+model Links {
+  id          String @id @default(uuid())
+  name String
+  link String
+  type String
+  pattern Pattern @relation(fields: [patternId], references: [id])
+  patternId String
 }
