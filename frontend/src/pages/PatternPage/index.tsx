@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { GetPatternRouteParams } from '../../lib/routes';
 import { trpc } from '../../lib/trpc';
 import css from './index.module.scss';
@@ -15,6 +15,13 @@ export const PatternPage = () => {
   const { data, error, isLoading, isFetching, isError } = trpc.getPattern.useQuery({
     patternId,
   });
+
+  let linkToLearn = [];
+  if (!linkToLearn.length) {
+    linkToLearn = trpc.getLinksToLearn.useQuery({
+      patternId: patternId,
+    }).data?.linksToLearn;
+  }
 
   let getReadPatterns: string[] = [];
   if (!getReadPatterns.length) {
@@ -52,8 +59,8 @@ export const PatternPage = () => {
 
   const checkIsRead = () => {
     return upReadPatterns.length
-            ? upReadPatterns.includes(patternId)
-            : getReadPatterns && getReadPatterns.includes(patternId)
+      ? upReadPatterns.includes(patternId)
+      : getReadPatterns && getReadPatterns.includes(patternId);
   };
 
   if (isLoading || isFetching) {
@@ -90,12 +97,13 @@ export const PatternPage = () => {
       </div>
 
       <div className={css.wrap}>
-        <a className={css.item} href="#">
-          read book
-        </a>
-        <a className={css.item} href="#">
-          view video
-        </a>
+        {linkToLearn.map((link) => {
+          return (
+            <a className={css.item} key={link.id} href={link.link} target='_blank'>
+              {link.name}
+            </a>
+          );
+        })}
       </div>
     </Section>
   );
