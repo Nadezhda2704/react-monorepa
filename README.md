@@ -6,7 +6,7 @@
 
 ## Первый запуск
 
-```nvm use``` — установить версию ноды
+```nvm use``` — установить версию ноды (версия указана в .nvmrc)
 
 ```pnpm i``` — установить пакеты
 
@@ -69,7 +69,7 @@ PostgreSQL + Prisma
 
 ## Создание пользователя в PSQL
 
-```psql``` — запустить консоль PostgreSQL
+```psql``` / ```psql postgres``` — запустить консоль PostgreSQL  /  запустить впервые
 
 ```create database "patterns";``` — создать базу данных patterns
 
@@ -86,6 +86,7 @@ PostgreSQL + Prisma
 ## PSQL Shell
 
 ```psql -d postgres -U patterns``` - запускает psql shell
+```\l``` - список баз
 
 ```\connect patterns``` - подключиться к базе "patterns"
 
@@ -93,4 +94,4 @@ PostgreSQL + Prisma
 
 ```\q``` (или Ctrl+D) – выход
 
-```select * from "pattern";``` - просмотр содержимого таблицы "pattern"
+```select * from "Pattern";``` - просмотр содержимого таблицы "pattern"
