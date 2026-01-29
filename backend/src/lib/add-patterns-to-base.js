@@ -565,11 +565,61 @@ async function insertMultipleRows() {
         watch: [],
       },
     ];
-    const insertedRows = await prisma.Pattern.createMany({
-      data: patterns,
-    });
 
-    console.log('Inserted rows:', insertedRows);
+    function transformPatterns(patterns) {
+      return patterns.map(pattern => ({
+        id: pattern.id,
+        name: pattern.name,
+        englishName: pattern.englishName,
+        type: pattern.type,
+        description: pattern.description,
+
+        links: [
+          ...(pattern.read ?? []).map(link => ({
+            id: link.id,
+            name: link.name,
+            link: link.link,
+            type: link.type,
+            typeName: link.typeName,
+            contentType: 'read',
+          })),
+          ...(pattern.watch ?? []).map(link => ({
+            id: link.id,
+            name: link.name,
+            link: link.link,
+            type: link.type,
+            typeName: link.typeName,
+            contentType: 'watch',
+          })),
+        ],
+      }));
+    }
+
+
+    const newPatterns = transformPatterns(patterns);
+
+    for (const pattern of newPatterns) {
+      await prisma.pattern.create({
+        data: {
+          name: pattern.name,
+          englishName: pattern.englishName,
+          type: pattern.type,
+          description: pattern.description,
+
+          links: {
+            create: pattern.links.map(link => ({
+              name: link.name,
+              link: link.link,
+              type: link.type,
+              typeName: link.typeName,
+              contentType: link.contentType, // 'read' | 'watch'
+            })),
+          },
+        },
+      });
+    }
+
+    console.log('rows generated successfully.');
   } catch (error) {
     console.error('Error inserting rows:', error);
   } finally {

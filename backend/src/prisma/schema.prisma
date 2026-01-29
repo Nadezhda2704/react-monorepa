@@ -22,7 +22,7 @@ model Pattern {
   type        String
   description String
 
-  Links Links[]
+  links Links[]
 }
 
 model TypeOfPattern {
@@ -37,6 +37,10 @@ model Links {
   name String
   link String
   type String
+
+  typeName    String
+  contentType String // 'read' | 'watch'
+
   pattern Pattern @relation(fields: [patternId], references: [id])
   patternId String
 }

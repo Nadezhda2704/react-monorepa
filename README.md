@@ -86,6 +86,7 @@ PostgreSQL + Prisma
 ## PSQL Shell
 
 ```psql -d postgres -U patterns``` - запускает psql shell
+
 ```\l``` - список баз
 
 ```\connect patterns``` - подключиться к базе "patterns"
