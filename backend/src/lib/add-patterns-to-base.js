@@ -1,5 +1,4 @@
 const { PrismaClient } = require('@prisma/client');
-const { watch } = require('fs');
 const prisma = new PrismaClient();
 async function insertMultipleRows() {
   try {
